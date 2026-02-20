@@ -81,6 +81,9 @@ soc_automation_project/
 │   └── reports/            # Generated reports
 └── database/
     └── incidents.db        # Incident database
+
+
+    
 🔄 Five Incident Response Phases
 1️⃣ Identification
 
