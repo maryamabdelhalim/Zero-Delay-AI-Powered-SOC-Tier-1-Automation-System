@@ -1,109 +1,64 @@
-# 🛡️ SOC Tier 1 Automation System
+🛡️ SOC Tier 1 Automation System
 
-## نظام أتمتة المستوى الأول لمركز العمليات الأمنية
+An AI-powered platform designed to automate Security Operations Center (SOC) Tier 1 incident response workflows using a free, locally deployed Large Language Model (LLM).
 
-نظام ذكاء اصطناعي متكامل لأتمتة الاستجابة للحوادث الأمنية باستخدام LLM محلي مجاني.
+🌟 Features
 
----
+✅ Fully Free – Powered by Ollama + Llama 3.2
 
-## 🌟 المميزات
+✅ Complete Five-Phase Incident Response Framework
 
-- ✅ **مجاني بالكامل** - استخدام Ollama + Llama 3.2
-- ✅ **المراحل الخمس الكاملة** للاستجابة للحوادث
-- ✅ **CLI واجهة احترافية** مع Rich
-- ✅ **Simulation Environment** للتجربة
-- ✅ **تقارير تلقائية** مفصلة
-- ✅ **Local Deployment** - لا يحتاج اتصال بالإنترنت
+✅ Professional CLI Interface built with Rich
 
----
+✅ Built-in Simulation Environment for testing and training
 
-## 📋 المتطلبات
+✅ Automated Structured Reporting
 
-### 1. Python 3.9+
-```bash
+✅ Local Deployment – No internet connection required
+
+📋 Requirements
+1. Python 3.9+
 python --version
-```
-
-### 2. Ollama (للـ LLM المحلي)
-```bash
+2. Ollama (for Local LLM)
 # Linux/Mac
 curl -fsSL https://ollama.com/install.sh | sh
 
 # Windows
-# Download from: https://ollama.com/download
-```
-
-### 3. تنزيل نموذج Llama 3.2
-```bash
+Download from: https://ollama.com/download
+3. Download Llama 3.2 Model
 ollama pull llama3.2
-```
-
----
-
-## 🚀 التثبيت السريع
-
-### الخطوة 1: Clone المشروع
-```bash
+🚀 Quick Installation
+Step 1: Clone the Repository
 git clone <repo-url>
 cd soc_automation_project
-```
-
-### الخطوة 2: إنشاء بيئة افتراضية
-```bash
+Step 2: Create a Virtual Environment
 python -m venv venv
 source venv/bin/activate  # Linux/Mac
-# أو
-venv\Scripts\activate  # Windows
-```
-
-### الخطوة 3: تثبيت المكتبات
-```bash
+# OR
+venv\Scripts\activate     # Windows
+Step 3: Install Dependencies
 pip install -r requirements.txt
-```
-
-### الخطوة 4: اختبار النظام
-```bash
+Step 4: Test the System
 python main.py --help
-```
-
----
-
-## 🎮 الاستخدام
-
-### 1️⃣ تشغيل تحليل حادث محاكى (Demo)
-```bash
+🎮 Usage
+1️⃣ Run a Simulated Incident (Demo)
 python main.py simulate --attack-type ddos
-```
-
-### 2️⃣ تحليل ملف Log حقيقي
-```bash
+2️⃣ Analyze a Real Log File
 python main.py analyze --log-file /path/to/firewall.log
-```
-
-### 3️⃣ عرض التقارير السابقة
-```bash
+3️⃣ View Previous Reports
 python main.py reports --list
-```
-
-### 4️⃣ Interactive Mode
-```bash
+4️⃣ Interactive Mode
 python main.py interactive
-```
-
----
-
-## 🏗️ هيكل المشروع
-
-```
+🏗️ Project Structure
 soc_automation_project/
-├── main.py                 # نقطة الدخول الرئيسية
-├── requirements.txt        # المكتبات المطلوبة
-├── README.md              # هذا الملف
+├── main.py                 # Main entry point
+├── requirements.txt        # Required dependencies
+├── README.md               # This file
 ├── config/
-│   └── config.yaml        # الإعدادات
+│   └── config.yaml         # System configuration
 ├── src/
 │   ├── __init__.py
-│   ├── llm_engine.py      # محرك الـ LLM
+│   ├── llm_engine.py       # LLM engine
 │   ├── phases/
 │   │   ├── __init__.py
 │   │   ├── phase1_identification.py
@@ -113,89 +68,83 @@ soc_automation_project/
 │   │   └── phase5_recovery.py
 │   ├── cli/
 │   │   ├── __init__.py
-│   │   └── interface.py   # واجهة CLI
+│   │   └── interface.py    # CLI interface
 │   ├── utils/
 │   │   ├── __init__.py
 │   │   ├── logger.py
 │   │   └── report_generator.py
 │   └── simulation/
 │       ├── __init__.py
-│       └── mock_data.py   # بيانات محاكاة
+│       └── mock_data.py    # Simulated data
 ├── data/
-│   ├── logs/              # سجلات محاكاة
-│   └── reports/           # التقارير المولدة
+│   ├── logs/               # Simulated logs
+│   └── reports/            # Generated reports
 └── database/
-    └── incidents.db       # قاعدة بيانات الحوادث
-```
+    └── incidents.db        # Incident database
+🔄 Five Incident Response Phases
+1️⃣ Identification
 
----
+Automated log analysis
 
-## 🔄 المراحل الخمس
+Attack type classification
 
-### 1️⃣ Identification - التعرف
-- تحليل Logs تلقائياً
-- تصنيف نوع الهجوم
-- تحديد الخطورة
+Severity assessment
 
-### 2️⃣ Containment - الاحتواء
-- توليد قواعد Firewall
-- اقتراحات IP Blocking
-- تفعيل Rate Limiting
+2️⃣ Containment
 
-### 3️⃣ Analysis - التحليل
-- تحليل Attack Vector
-- تحديد المصدر
-- Timeline للهجوم
+Firewall rule generation
 
-### 4️⃣ Eradication - الإزالة
-- إزالة Backdoors
-- تحديث Security Policies
-- Hardening Recommendations
+IP blocking recommendations
 
-### 5️⃣ Recovery - الاستعادة
-- خطة استعادة الخدمات
-- Monitoring Plan
-- تقرير نهائي شامل
+Rate limiting activation
 
----
+3️⃣ Analysis
 
-## 📊 مثال على Output
+Attack vector analysis
 
-```
-╔══════════════════════════════════════════════════════════╗
-║         SOC Tier 1 Automation - Incident Report         ║
-╚══════════════════════════════════════════════════════════╝
+Source identification
 
-🚨 Incident ID: INC-2026-001
-📅 Timestamp: 2026-01-28 10:30:45
+Attack timeline reconstruction
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Phase 1: IDENTIFICATION ✓
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+4️⃣ Eradication
+
+Backdoor removal recommendations
+
+Security policy updates
+
+Hardening recommendations
+
+5️⃣ Recovery
+
+Service restoration plan
+
+Monitoring plan
+
+Final structured incident report
+
+📊 Example Output
+SOC Tier 1 Automation - Incident Report
+
+Incident ID: INC-2026-001
+Timestamp: 2026-01-28 10:30:45
+
+Phase 1: IDENTIFICATION
 Attack Type: DDoS
 Severity: CRITICAL
 Affected Assets: web-server-01, web-server-02
 Source IPs: 45.67.89.*, 192.168.*.*
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-Phase 2: CONTAINMENT ✓
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Phase 2: CONTAINMENT
 Actions Taken:
-  ✓ Blocked 127 malicious IPs
-  ✓ Rate limiting enabled (100 req/min)
-  ✓ WAF rules updated
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✓ Blocked 127 malicious IPs
+✓ Rate limiting enabled (100 req/min)
+✓ WAF rules updated
 
-... (باقي المراحل)
-```
+... (remaining phases)
+⚙️ Configuration
 
----
+Modify settings inside config/config.yaml:
 
-## ⚙️ Configuration
-
-يمكن تعديل الإعدادات في `config/config.yaml`:
-
-```yaml
 llm:
   model: "llama3.2"
   temperature: 0.7
@@ -203,56 +152,31 @@ llm:
 
 detection:
   threshold: 0.8
-  auto_containment: false  # لو true، هيطبق الإجراءات تلقائياً
+  auto_containment: false
 
 reporting:
-  format: "markdown"  # أو "json" أو "html"
+  format: "markdown"  # or "json" or "html"
   auto_save: true
-```
+🔐 Security
 
----
+✅ All data processed locally
 
-## 🔐 الأمان
+✅ No external data transmission
 
-- ✅ جميع البيانات محلية (Local)
-- ✅ لا يتم إرسال أي بيانات للخارج
-- ✅ Logs مشفرة
-- ✅ Access Control قابل للتخصيص
+✅ Encrypted logs
 
----
+✅ Customizable access control
 
-## 🚧 Roadmap
+🚧 Roadmap
 
-- [ ] إضافة دعم Multiple LLMs
-- [ ] Web Dashboard
-- [ ] Integration مع SIEM حقيقي
-- [ ] Machine Learning للتنبؤ
-- [ ] API للـ Integration
-- [ ] Docker Container
+ Support for multiple LLM models
 
----
+ Web dashboard
 
-## 🤝 المساهمة
+ Real SIEM integration
 
-contributions مرحب بها! يمكنك:
-1. Fork المشروع
-2. إنشاء Feature Branch
-3. Commit تعديلاتك
-4. Push للـ Branch
-5. فتح Pull Request
+ Machine learning enhancements
 
----
+ API for integration
 
-## 📝 License
-
-MIT License - استخدم المشروع بحرية!
-
----
-
-## 📧 التواصل
-
-لو عندك أسئلة أو اقتراحات، تواصل معنا!
-
----
-
-**🌟 لو عجبك المشروع، متنساش تعمل Star!**
+ Docker containerization
