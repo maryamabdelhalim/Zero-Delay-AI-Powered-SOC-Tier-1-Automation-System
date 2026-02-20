@@ -1,0 +1,100 @@
+# SOC Automation System Configuration
+
+# LLM Settings
+llm:
+  provider: "ollama"  # ollama, openai, anthropic
+  model: "llama3.2"   # Model name
+  temperature: 0.7    # 0.0 = deterministic, 1.0 = creative
+  max_tokens: 2000    # Maximum response length
+  timeout: 60         # Timeout in seconds
+  base_url: "http://localhost:11434"  # Ollama server URL
+
+# Detection Settings
+detection:
+  threshold: 0.75           # Confidence threshold for incident detection
+  auto_containment: false   # Auto-execute containment actions
+  require_approval: true    # Require human approval for critical actions
+  severity_levels:
+    critical: 0.9
+    high: 0.7
+    medium: 0.5
+    low: 0.3
+
+# Phase Configuration
+phases:
+  identification:
+    enabled: true
+    auto_classify: true
+    
+  containment:
+    enabled: true
+    auto_block: false      # Auto-block malicious IPs
+    max_ips_to_block: 100  # Maximum IPs to block in single incident
+    
+  analysis:
+    enabled: true
+    deep_analysis: true
+    timeline_generation: true
+    
+  eradication:
+    enabled: true
+    auto_patch: false
+    
+  recovery:
+    enabled: true
+    gradual_restore: true
+    monitoring_period: 24  # Hours
+
+# Reporting
+reporting:
+  format: "markdown"     # markdown, json, html, pdf
+  auto_save: true
+  include_recommendations: true
+  language: "en"         # en, ar, both
+  
+# Database
+database:
+  type: "sqlite"
+  path: "database/incidents.db"
+  backup_enabled: true
+  backup_interval: 24    # Hours
+
+# Logging
+logging:
+  level: "INFO"          # DEBUG, INFO, WARNING, ERROR, CRITICAL
+  file: "logs/soc_automation.log"
+  max_size: 10           # MB
+  backup_count: 5
+  format: "detailed"     # simple, detailed, json
+
+# Security
+security:
+  encrypt_logs: false
+  encrypt_reports: false
+  allowed_ips: []        # Empty = allow all
+  
+# Simulation
+simulation:
+  enabled: true
+  attack_types:
+    - ddos
+    - dos
+    - brute_force
+    - sql_injection
+    - xss
+    - port_scan
+  generate_realistic_data: true
+
+# Integration (for future use)
+integration:
+  siem:
+    enabled: false
+    type: null           # splunk, elk, qradar
+    api_url: null
+    api_key: null
+    
+  firewall:
+    enabled: false
+    type: null           # palo_alto, fortinet, cisco
+    api_url: null
+    api_key: null

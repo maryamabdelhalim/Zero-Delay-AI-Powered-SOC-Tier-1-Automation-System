@@ -1,0 +1,31 @@
+2026-01-28 10:25:30 FIREWALL INFO: Normal traffic from 192.168.1.50
+2026-01-28 10:25:35 FIREWALL INFO: Connection established: 192.168.1.50 -> web-server-01:80
+2026-01-28 10:30:00 FIREWALL WARNING: Elevated traffic detected
+2026-01-28 10:30:15 FIREWALL ALERT: High traffic from 45.67.89.123
+2026-01-28 10:30:16 FIREWALL ALERT: Multiple connection attempts from 45.67.89.123: 500 req/sec
+2026-01-28 10:30:17 FIREWALL ALERT: High traffic from 103.45.67.89
+2026-01-28 10:30:18 FIREWALL ALERT: Multiple connection attempts from 103.45.67.89: 800 req/sec
+2026-01-28 10:30:19 FIREWALL ALERT: High traffic from 78.23.45.67
+2026-01-28 10:30:20 FIREWALL ALERT: Multiple connection attempts from 78.23.45.67: 1200 req/sec
+2026-01-28 10:30:25 SERVER ALERT: web-server-01 CPU usage: 85%
+2026-01-28 10:30:30 SERVER ALERT: web-server-01 CPU usage: 92%
+2026-01-28 10:30:35 FIREWALL CRITICAL: SYN flood attack detected
+2026-01-28 10:30:36 TARGET: web-server-01 (192.168.1.100:80)
+2026-01-28 10:30:37 FIREWALL INFO: Additional sources detected: 192.168.45.12, 192.168.45.13
+2026-01-28 10:30:40 SERVER CRITICAL: web-server-01 CPU usage: 99%
+2026-01-28 10:30:41 SERVER CRITICAL: web-server-01 Memory: 95% full
+2026-01-28 10:30:45 FIREWALL ALERT: Total request count: 15,000 in last 60 seconds
+2026-01-28 10:30:50 FIREWALL ALERT: Pattern matches DDoS signature
+2026-01-28 10:30:55 SERVER ERROR: web-server-01 response time degraded to 5000ms
+2026-01-28 10:31:00 FIREWALL ALERT: Continuing high traffic from multiple sources
+2026-01-28 10:31:05 SERVER ALERT: web-server-02 showing similar pattern
+2026-01-28 10:31:10 FIREWALL CRITICAL: Coordinated attack detected across 50+ IP addresses
+2026-01-28 10:31:15 SECURITY ALERT: Potential botnet activity
+2026-01-28 10:31:20 FIREWALL INFO: Source IPs span multiple geographic regions
+2026-01-28 10:31:25 SERVER WARNING: Load balancer at capacity
+2026-01-28 10:31:30 FIREWALL ALERT: Attack volume increasing
+2026-01-28 10:31:35 SERVER CRITICAL: Multiple backend servers affected
+2026-01-28 10:31:40 SECURITY CRITICAL: Service availability severely impacted
+2026-01-28 10:31:45 FIREWALL INFO: Attempting to identify attack vector
+2026-01-28 10:31:50 FIREWALL ALERT: Primary target: web-server-01
+2026-01-28 10:31:55 FIREWALL ALERT: Secondary target: web-server-02
